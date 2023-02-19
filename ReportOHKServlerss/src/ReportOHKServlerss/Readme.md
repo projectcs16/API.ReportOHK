@@ -39,6 +39,7 @@ Deploy application
 ```
     cd "ReportOHKServlerss/src/ReportOHKServlerss"
     dotnet lambda deploy-serverless
+    dotnet lambda deploy-serverless testfunctionserverless --region ap-southeast-1 -sb testfunctionserverless
 ```
 ## Arm64
 

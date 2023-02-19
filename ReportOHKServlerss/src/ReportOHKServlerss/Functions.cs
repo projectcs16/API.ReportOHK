@@ -53,7 +53,7 @@ public class Functions
         var response = new APIGatewayProxyResponse
         {
             StatusCode = (int)HttpStatusCode.OK,
-            Body = $"Hello AWS Serverless Get {request.Path}-{JsonSerializer.Serialize(request)}------{JsonSerializer.Serialize(context)}",
+            Body = $"Hello AWS Serverless Response Get {request.Path}-{JsonSerializer.Serialize(request)}------{JsonSerializer.Serialize(context)}",
             Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
         };
 
