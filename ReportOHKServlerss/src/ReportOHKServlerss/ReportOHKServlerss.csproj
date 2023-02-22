@@ -14,5 +14,15 @@
     <PackageReference Include="Amazon.Lambda.Core" Version="2.1.0" />
     <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.0" />
     <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.5.0" />
+    <PackageReference Include="System.Data.Odbc" Version="7.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="System.Data.Odbc" />
+    <None Remove="Repositories\" />
+    <None Remove="Dtos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Dtos\" />
   </ItemGroup>
 </Project>

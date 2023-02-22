@@ -26,6 +26,6 @@ public class FunctionTest
         context = new TestLambdaContext();
         response = functions.Get(request, context);
         Assert.Equal(200, response.StatusCode);
-        Assert.Equal("Hello AWS Serverless 2", response.Body);
+        Assert.Equal("Hello AWS Serverless Response Get", response.Body);
     }
 }

@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Net.Http.Headers;
+using static System.Net.Mime.MediaTypeNames;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
@@ -47,13 +48,16 @@ public class Functions
     public APIGatewayProxyResponse Get(APIGatewayProxyRequest request, ILambdaContext context)
     {
         
-        context.Logger.LogInformation("Get Request\n");
-        var x = ProcessRepositoriesAsync(_client).GetAwaiter().GetResult();
+        context.Logger.LogInformation("Get  People Request\n");
+        //var x = ProcessRepositoriesAsync(_client).GetAwaiter().GetResult();
+        var ohk = new Repositories.OHKDataBaseRepository();
 
+        //var x = ohk.GetPeople();
+        context.Logger.LogInformation("test console");
         var response = new APIGatewayProxyResponse
         {
             StatusCode = (int)HttpStatusCode.OK,
-            Body = $"Hello AWS Serverless Response Get {request.Path}-{JsonSerializer.Serialize(request)}------{JsonSerializer.Serialize(context)}",
+            Body = $"Hello AWS Serverless Response Get",
             Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
         };
 
